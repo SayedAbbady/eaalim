@@ -29,11 +29,17 @@
                     <form action="{{route('search-form')}}" class="form-inline" method="POST">
                         @csrf
                         <input type="text" name="search" placeholder="Search" class="form-control-sm mt-2 form-control" id="">
-                        <button class="btn-primary btn" style="font-size: 11.3px;
-                        margin-top: 8px;
-                        margin-left: -12px;
-                        border-top-left-radius: 0;
-                        border-bottom-left-radius: 0;" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <button 
+                            id   ="search-btn-form"
+                            class=" btn-primary btn" 
+                            style=" font-size: 11.3px;
+                                    margin-top: 8px;
+                                    margin-left: -12px;
+                                    border-top-left-radius: 0;
+                                    border-bottom-left-radius: 0;" 
+                            type="  submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
                     </form>
                 </li>
                   
