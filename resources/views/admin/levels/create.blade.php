@@ -38,8 +38,8 @@
                 <div class="form-group col-md-12">
                   <label for="">Level type</label>
                   <select name="type" class="form-control" id="">
-                    <option value='0'>Paid</option>
-                    <option value='1'>free</option>
+                    <option value='0'>Closed</option>
+                    <option value='1'>open</option>
                   </select>
                   <small class="text-danger errorClass font-weight-bold" id="typeErrors"></small>
                 </div>

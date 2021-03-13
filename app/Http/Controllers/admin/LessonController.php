@@ -32,29 +32,30 @@ class LessonController extends Controller
         'lesson_video'         =>'required',
         'lesson_notes'         =>'required',
         'level'         =>'required',
-        'lesson_rate'         =>'required'
+        
       ]);
+
       if ($request->has('game')){
         $game_file =  $this->saveFile($request->game,'upload/');
       } else {$game_file = NULL;}
       if ($request->has('quiz')){
         $quiz_file =  $this->saveFile($request->quiz,'upload/');
       } else {$quiz_file = NULL;}
+      if ($request->has('new_file')){
+        $new_file =  $this->saveFile($request->new_file,'upload/');
+      } else {$new_file = NULL;}
   
-      
+       $new_num = lessons::select('l_num')->orderby('l_num','DESC')->first()->l_num + 1;
   
       $slider = lessons::create([
         "l_name"            =>$request->title,
-        "l_words"       =>"0",
         "l_video"       =>$request->lesson_video,
         "l_notes" => $request->lesson_notes,
-        "l_sentens" => $request->Sentence??"0",
-        "l_rec" => "0",
         "l_quiz" => $quiz_file,
         "l_game" => $game_file,
-        "l_rate" => $request->lesson_rate,
+        "l_file" => $new_file,
         "l_level" => $request->level,
-        "l_live" => $request->liveLink,
+        "l_num" => ($new_num=='0')?"1":$new_num 
   
       ]);
   

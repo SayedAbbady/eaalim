@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/dash', 'admin\DashController@index')->middleware('auth')->name('adminhome');
+
 Route::group(['prefix' => 'admin', 'namespace'=>'admin', 'middleware'=>'auth'], function () {
   // dashboard start
   Route::get('/', 'DashController@index')->name('adminhome');
@@ -28,9 +30,6 @@ Route::group(['prefix' => 'admin', 'namespace'=>'admin', 'middleware'=>'auth'], 
   // dashboard start
 
   //******************************************************************
-
-
-
 
   // unit route
   Route::resource('/unit', 'UnitController')->names([

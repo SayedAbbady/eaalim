@@ -12,6 +12,7 @@
           <div class="card-header">
             <h5 class="card-title">Lessons</h5>
             <p class="card-category">Add new lesson </p>
+            
           </div>
           <div class="card-body ">
 
@@ -39,16 +40,7 @@
                   <input type="text" class="form-control lesson-main" name="title" placeholder="Title">
                   <small class="text-danger errorClass font-weight-bold" id="titleErrors"></small>
                 </div>
-                <div class="form-group col-md-12">
-                  <label for="">lesson Live Link</label>
-                  <input type="text" class="form-control lesson-main" name="liveLink" placeholder="lesson Live Link">
-                  <small class="text-danger errorClass font-weight-bold" id="liveLinkErrors"></small>
-                </div>
-                <div class="form-group col-md-12">
-                  <label for="">lesson Sentence</label>
-                  <input type="text" class="form-control lesson-main" name="Sentence" placeholder="lesson Sentence">
-                  <small class="text-danger errorClass font-weight-bold" id="SentenceErrors"></small>
-                </div>
+                
                 <div class="form-group col-md-12">
                   <label for="">lesson Video</label>
                   <textarea style='min-height:100px!important;' class="form-control lesson-main" name="lesson_video" placeholder="lesson Video"></textarea>
@@ -56,7 +48,7 @@
                 </div>
                 <div class="form-group col-md-12">
                   <label for="">lesson Notes</label>
-                  <textarea id="summernote" style='min-height:100px!important;' class="form-control lesson-main" name="lesson_notes" placeholder="lesson Notes"></textarea>
+                  <textarea id="summernote" style='min-height:100px!important;' class="summernote form-control lesson-main" name="lesson_notes" placeholder="lesson Notes"></textarea>
                   <small class="text-danger errorClass font-weight-bold" id="lesson_notesErrors"></small>
                 </div>
                 <div class="form-group col-md-12">
@@ -84,11 +76,7 @@
                   </select>
                   <small class="text-danger errorClass font-weight-bold" id="levelErrors"></small>
                 </div>
-                <div class="form-group col-md-12">
-                  <label for="">lesson Rate</label>
-                  <input type="text" class="form-control lesson-main" name="lesson_rate" placeholder="lesson Rate" value="0.001">
-                  <small class="text-danger errorClass font-weight-bold" id="lesson_rateErrors"></small>
-                </div>
+                
 
                 <div class="form-group col-md-12 input-File-Custom">
                   <label for="">Select Game</label>
@@ -105,6 +93,15 @@
                   <label for="file" class="btn btn-tertiary js-labelFile">
                     <i class="icon fa fa-check"></i>
                     <span class="js-fileName ">Choose a quiz file</span>
+                  </label>
+                  <small class="text-danger errorClass font-weight-bold" id="fileErrors"></small>
+                </div>
+                <div class="form-group col-md-12 input-File-Custom">
+                  <label for="">Select another file</label>
+                  <input type="file" name="new_file" class="input-file lesson-main">
+                  <label for="file" class="btn btn-tertiary js-labelFile">
+                    <i class="icon fa fa-check"></i>
+                    <span class="js-fileName ">Choose a file</span>
                   </label>
                   <small class="text-danger errorClass font-weight-bold" id="fileErrors"></small>
                 </div>

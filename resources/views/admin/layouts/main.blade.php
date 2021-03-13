@@ -59,10 +59,9 @@
   
   <script>
     $(document).ready(function() {
-        CKEDITOR.replace('lesson_notes');
-      
-        
-        //CKEDITOR.instances.note.updateElement();
+        $(".summernote").on('click',function () {
+          CKEDITOR.replace('lesson_notes');
+        });
         
     });
   </script>
