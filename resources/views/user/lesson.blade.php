@@ -87,7 +87,7 @@ Eaalim syllabus
             }?> 
             <?php if($lessono->l_file != ''){
                 ?>
-                    <a href="{{asset('/'.$lessono->l_file)}}" target="_blank" class="btn btn-info"> Lesson Game </a>
+                    <a href="{{asset('/'.$lessono->l_file)}}" target="_blank" class="btn btn-success"> Lesson Game </a>
                     <?php
             }?> 
             <br>
