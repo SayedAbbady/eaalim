@@ -12,7 +12,7 @@ class LevelController extends Controller
         if (is_null($id)) {
             return redirect()->route('home');
         } else {
-            $q = lessons::where('l_level',$id);
+            $q = lessons::where('l_level',$id)->orderBy('l_num','ASC');
             if ($q->count() >= 1) {
                 return view('user.lesson',[
                     'lessons'=> $q->get(),

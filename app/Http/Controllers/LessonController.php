@@ -13,7 +13,7 @@ class LessonController extends Controller
             return redirect()->route('home');
         } else {
             $q = lessons::where('l_level',$level);
-            $lesson_one = lessons::where('l_id',$lesson_id)->first();
+            $lesson_one = lessons::where('l_id',$lesson_id)->orderBy('l_num','ASC')->first();
             
             return view('user.lesson',[
                 'lessons'=> $q->get(),

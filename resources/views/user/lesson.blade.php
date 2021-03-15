@@ -6,11 +6,15 @@ Eaalim syllabus
 
 @section('content')
   @include('user.navbar')
-
+  @php 
+  // var_dump(Request()->parameter) ;
+  $n = explode('/',Request::path());
+  
+  @endphp
   <div class="side-menu">
     @foreach ($lessons as $lesson) 
         
-        <a href="{{route('lesson_show',['id'=>$lesson->l_id,'level'=>$lesson->l_level])}}" class="un-locked "> <i class="fa fa-unlock"></i> <?php echo $lesson->l_name?> </a>
+        <a href="{{route('lesson_show',['id'=>$lesson->l_id,'level'=>$lesson->l_level])}}" class="{{($n[1]==$lesson->l_id)?'active':''}} un-locked "> <i class="fa fa-unlock"></i> <?php echo $lesson->l_name?> </a>
     @endforeach
 </div>
 <div class="lock"> <i class="fa fa-chevron-right"></i> </div>
@@ -33,6 +37,7 @@ Eaalim syllabus
 
             ?>
         </h4>
+        
         <hr>
         <?php echo $lessono->l_video?>
         <br>
@@ -68,20 +73,26 @@ Eaalim syllabus
         
         <br>
         <div class="row">
-            <div class="col-md-4">Lesson Rate : <b><?php echo $lessono->l_rate?>%</b></div>
-            <div class="col-md-4 text-center"> <?php if($lessono->l_game != ''){
+            
+            <div class="col-md-12 text-center"> 
+                <?php if($lessono->l_game != ''){
                 ?>
                     <a href="{{asset('/'.$lessono->l_game)}}" target="_blank" class="btn btn-info"> Lesson Game </a>
                     <?php
-            }?>
+                }?>
             <?php if($lessono->l_quiz != ''){
                 ?>
-                    <a href="{{asset('/'.$lessono->l_quiz)}}" target="_blank" class="btn btn-danger"> Lesson Quiz </a>
+                    <a href="{{asset('/'.$lessono->l_quiz)}}" target="_blank" class="mx-3 btn btn-danger"> Lesson Quiz </a>
+                    <?php
+            }?> 
+            <?php if($lessono->l_file != ''){
+                ?>
+                    <a href="{{asset('/'.$lessono->l_file)}}" target="_blank" class="btn btn-info"> Lesson Game </a>
                     <?php
             }?> 
             <br>
             </div>
-            {{-- <div class="col-md-4 text-md-right text-center"><a class="btn btn-success text-light" href="<?php echo base_url('user/finish/'.$lessono->l_id);?>"> Finish </a></div> --}}
+            
         </div>
         
     </div>

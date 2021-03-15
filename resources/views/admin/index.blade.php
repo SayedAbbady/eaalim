@@ -20,7 +20,7 @@
                 <div class="col-7 col-md-8">
                   <div class="numbers">
                     <p class="card-category">units</p>
-                    <p class="card-title">{{$units}} units<p>
+                    <p class="card-title">{{$units}}<p>
                   </div>
                 </div>
               </div>
